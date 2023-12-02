@@ -2,21 +2,55 @@ package com.example.mobilesf;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import androidx.annotation.Nullable;
 
 public class Food_input extends AppCompatActivity {
+    private static final int PICK_IMAGE_REQUEST = 1; //이미지 주소
+    private EditText imagePathEditText; // 이미지 주소
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_input);
         System.out.println("시스템 시작");
+
+        //이미지 주소
+        imagePathEditText = findViewById(R.id.editTextText);
+        Button selectImageButton = findViewById(R.id.button);
+        selectImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFileChooser();
+            }
+        });
+    }
+
+    private void openFileChooser() { //이미지 주소
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    @Override //이미지 주소
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
+            Uri imageUri = data.getData();
+            imagePathEditText.setText(imageUri.toString());
+        }
     }
 
     public void addfood(View view){
