@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="place_choices">
+        <item>상록원 1층</item>
+        <item>상록원 2층</item>
+        <item>상록원 3층</item>
+        <item>기숙사 식당</item>
+        <item>교내 카페</item>
+        <item>가든쿡</item>
+    </string-array>
+</resources>
