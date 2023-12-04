@@ -8,6 +8,8 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -15,10 +17,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 public class DetailActivity extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CODE = 1;
@@ -46,7 +53,7 @@ public class DetailActivity extends AppCompatActivity {
 
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             // 권한이 있으면 이미지 로딩
-            loadImage();
+            //loadImage();
         } else {
             // 권한이 없으면 권한 요청
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
@@ -75,10 +82,20 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         imageView = findViewById(R.id.imageView);
-        loadImage();
+        //loadImage();
+        loadImage2();
     }
 
+    private void loadImage2() {
 
+        String copiedImagePath = String.valueOf(imageUri);
+
+        Glide.with(this)
+                .load(copiedImagePath)
+                .into(imageView);
+    }
+
+    //로드 이미지 불러오기 구버전 ... 이제 안씀
     private void loadImage() {
         if (imageUri != null) {
             // 이미지 주소가 유효하다면 이미지를 표시

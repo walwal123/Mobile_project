@@ -15,9 +15,16 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 public class Food_input extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1; //이미지 주소
     private EditText imagePathEditText; // 이미지 주소
+    int k = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +39,19 @@ public class Food_input extends AppCompatActivity {
         selectImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFileChooser();
+                //openFileChooser();
+                chooseImage();
             }
         });
     }
-
-    private void openFileChooser() { //이미지 주소
+/* 구 이미지 주소 불러오는법 .... 이제 안쓸듯
+    private void openFileChooser() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
-    @Override //이미지 주소
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -51,7 +59,7 @@ public class Food_input extends AppCompatActivity {
             Uri imageUri = data.getData();
             imagePathEditText.setText(imageUri.toString());
         }
-    }
+    }*/
 
     public void addfood(View view){
         ContentValues addValues = new ContentValues();
@@ -82,6 +90,59 @@ public class Food_input extends AppCompatActivity {
                 System.out.println();
             }
         }
+    }
+
+    //이미지 내부 저장 코드
+    public void chooseImage() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            Uri selectedImageUri = data.getData();
+
+            // 이미지 복사 및 경로 가져오기
+            String copiedImagePath = copyImageToInternalStorage(selectedImageUri);
+
+            // EditText에 경로 설정
+            imagePathEditText.setText(copiedImagePath);
+        }
+    }
+
+    private String copyImageToInternalStorage(Uri sourceUri) {
+        String[] columns = new String[]{"_id", "restaurant", "picture","food_name","taste","date","cost"};
+        Cursor c = getContentResolver().query(MyContentProvider.CONTENT_URI,columns, null, null, null, null);
+        if (c != null){
+            while(c.moveToNext()){
+                k = c.getCount();
+            }
+        }
+        // 내부 저장소 경로 설정
+        String destinationPath = getFilesDir() + File.separator + "copied_image"+k+".jpg" ;
+
+        try {
+            InputStream inputStream = getContentResolver().openInputStream(sourceUri);
+            OutputStream outputStream = new FileOutputStream(destinationPath);
+
+            // 이미지 복사
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+
+            inputStream.close();
+            outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return destinationPath;
     }
 
 }
