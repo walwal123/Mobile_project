@@ -1,6 +1,5 @@
 package com.example.mobilesf;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -8,8 +7,6 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -18,14 +15,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CODE = 1;
@@ -37,13 +28,23 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        MyApplication myApp = (MyApplication) getApplication();
 
+        ArrayList<String> retrievedData = myApp.getMyDataList();
         TextView detailTextView = findViewById(R.id.textView5);
+        TextView textViewtaste = findViewById(R.id.text15);
+        TextView textViewrest = findViewById(R.id.textView16);
+        TextView textViewname = findViewById(R.id.textView17);
+        TextView textViewdate = findViewById(R.id.textView18);
+        TextView textViewcost = findViewById(R.id.textView19);
+        TextView textViewcal = findViewById(R.id.textView21);
         int position = 0;
 
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("position")) {
             position = intent.getIntExtra("position", -1);
+            String dataAtIndex = retrievedData.get(position);
+            textViewcal.setText(dataAtIndex);
             position += 1;
             if (position != -1) {
                 // position을 사용하여 원하는 동작 수행
@@ -77,6 +78,11 @@ public class DetailActivity extends AppCompatActivity {
                 String date = c.getString(5);
                 String cost = c.getString(6);
                 editMultipleText.append("id:" + id + "// 식당:" + rest + "// 사진주소:" + pic + "// 메뉴이름:" + name + "// 평가:" + taste + "// 날짜:" + date + "// 비용:" + cost);
+                textViewrest.setText(rest);
+                textViewname.setText(name);
+                textViewtaste.setText(taste);
+                textViewcost.setText(cost);
+                textViewdate.setText(date);
             }
             c.close();
         }
