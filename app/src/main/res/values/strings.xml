@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MobileSF</string>
-    <string name="bt_name1">식사 입력하기</string>
-    <string name="bt_name2">식사 보여주기</string>
-    <string name="bt_name3">식사 분석하기</string>
+    <string name="bt_name1">식사 입력</string>
+    <string name="bt_name2">식사 보기</string>
+    <string name="bt_name3">식사 분석</string>
 </resources>

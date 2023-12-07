@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="wheat">#FFE4B5</color>
+    <color name="orange">#F0B469</color>
 </resources>
