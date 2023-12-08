@@ -10,8 +10,33 @@
         android:id="@+id/ListView"
         android:layout_width="345dp"
         android:layout_height="265dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="92dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="165dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:text="식사 리스트"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="226dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="44dp"
+        android:onClick="go_month_page"
+        android:text="한달 간의 식사보기!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

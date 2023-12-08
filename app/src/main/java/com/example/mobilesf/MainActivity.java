@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Food_output.class);
         startActivity(intent);
     }
+    public void analyze(View view){
+        Intent intent = new Intent(this, Food_Analyze.class);
+        startActivity(intent);
+    }
 
     public void deleteAll(View view){
         getContentResolver().delete(MyContentProvider.CONTENT_URI,null,null);
