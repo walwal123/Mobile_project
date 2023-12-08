@@ -45,7 +45,7 @@ public class DetailActivity extends AppCompatActivity {
             position = intent.getIntExtra("position", -1);
             String dataAtIndex = retrievedData.get(position);
             textViewcal.setText(dataAtIndex);
-            position += 9; //임시 조치 , 데이터 베이스 초기화 시켜서 포지션 값 시작이랑 id시작값이 달라짐, 현재 id=9가 1번 데이터라 포지션값이 9부터 올라감
+            position += 1; //임시 조치 , 데이터 베이스 초기화 시켜서 포지션 값 시작이랑 id시작값이 달라짐, 현재 id=9가 1번 데이터라 포지션값이 9부터 올라감
             if (position != -1) {
                 // position을 사용하여 원하는 동작 수행
                 detailTextView.setText("Clicked position: " + position);
@@ -62,13 +62,14 @@ public class DetailActivity extends AppCompatActivity {
 
         //주어진 position값으로 쿼리 검색
         String[] columns = new String[]{"_id", "restaurant", "picture", "food_name", "taste", "date", "cost"};
-        String selection = "_id=?";
-        String[] selectionArgs = new String[]{String.valueOf(position)};
-        Cursor c = getContentResolver().query(MyContentProvider.CONTENT_URI, columns, selection, selectionArgs, null, null);
-        if (c != null) {
+       // String selection = "_id=?";
+       // String[] selectionArgs = new String[]{String.valueOf(position)};
+       // Cursor c = getContentResolver().query(MyContentProvider.CONTENT_URI, columns, selection, selectionArgs, null, null);
+        Cursor c = getContentResolver().query(MyContentProvider.CONTENT_URI,columns, null, null, null, null);
+        if (c != null && c.moveToPosition(position - 1)) {
             EditText editMultipleText = findViewById(R.id.editTextText6);
             editMultipleText.setText("");
-            while (c.moveToNext()) {
+
                 int id = c.getInt(0);
                 String rest = c.getString(1);
                 String pic = c.getString(2);
@@ -83,10 +84,9 @@ public class DetailActivity extends AppCompatActivity {
                 textViewtaste.setText(taste);
                 textViewcost.setText(cost);
                 textViewdate.setText(date);
-            }
+
             c.close();
         }
-
         imageView = findViewById(R.id.imageView);
         //loadImage();
         loadImage2();
