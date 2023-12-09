@@ -8,38 +8,21 @@
 
     <ListView
         android:id="@+id/ListView"
-        android:layout_width="371dp"
-        android:layout_height="447dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="176dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="211dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="171dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="26dp"
-        android:text="식사 리스트"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ListView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="193dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="64dp"
+        android:layout_width="219dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="83dp"
         android:background="@drawable/btn_input_color"
         android:onClick="go_month_page"
         android:text="한달 간의 식사"
@@ -47,23 +30,38 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ListView"
         app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="201dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="35dp"
+        android:text="   식사 리스트"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ListView"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.563" />
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="64dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="17dp"
+        android:layout_width="44dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="31dp"
         android:src="@drawable/list"
         app:layout_constraintBottom_toTopOf="@+id/ListView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
