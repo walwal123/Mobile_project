@@ -10,8 +10,8 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="91dp"
         android:text=" 최근 한달 간의 식사 분석"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView26"
@@ -21,11 +21,11 @@
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="151dp"
+        android:layout_width="140dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="88dp"
         android:text="Total Kcal   : "
         android:textSize="24sp"
         android:textStyle="bold"
@@ -36,39 +36,48 @@
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="200dp"
+        android:layout_width="107dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="84dp"
         android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView38"
         app:layout_constraintStart_toEndOf="@+id/textView24"
         app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/textView34"
+        android:layout_width="171dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="32dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView35"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView30"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="44dp"
-        android:text="조식"
+        android:layout_marginEnd="20dp"
+        android:text="가격  :"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView27"
-        app:layout_constraintEnd_toStartOf="@+id/textView30"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView26"
+        app:layout_constraintEnd_toStartOf="@+id/textView34"
+        app:layout_constraintStart_toEndOf="@+id/textView26" />
 
     <TextView
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
         android:text="중식"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -78,26 +87,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="37dp"
-        android:text="석식"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView29"
-        app:layout_constraintEnd_toStartOf="@+id/textView32"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
-    <TextView
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="37dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="105dp"
         android:text="음료"
         android:textSize="24sp"
@@ -108,43 +102,51 @@
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
     <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="34dp"
-        android:text="가격  :"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView34"
-        app:layout_constraintEnd_toStartOf="@+id/textView34"
-        app:layout_constraintStart_toEndOf="@+id/textView26" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="34dp"
-        android:text="가격  :"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView35"
-        app:layout_constraintEnd_toStartOf="@+id/textView35"
-        app:layout_constraintStart_toEndOf="@+id/textView27" />
-
-    <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="34dp"
+        android:layout_marginEnd="19dp"
         android:text="가격  :"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView36"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView28"
         app:layout_constraintEnd_toStartOf="@+id/textView36"
         app:layout_constraintStart_toEndOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="33dp"
+        android:text="조식"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView27"
+        app:layout_constraintEnd_toStartOf="@+id/textView30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="32dp"
+        android:text="석식"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView29"
+        app:layout_constraintEnd_toStartOf="@+id/textView32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
     <TextView
         android:id="@+id/textView33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="34dp"
+        android:layout_marginEnd="19dp"
         android:text="가격  :"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView29"
@@ -152,25 +154,22 @@
         app:layout_constraintStart_toEndOf="@+id/textView29" />
 
     <TextView
-        android:id="@+id/textView34"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="41dp"
-        android:text="TextView"
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:text="가격  :"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView35"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView30"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView27"
+        app:layout_constraintEnd_toStartOf="@+id/textView35"
+        app:layout_constraintStart_toEndOf="@+id/textView27" />
 
     <TextView
         android:id="@+id/textView35"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="53dp"
+        android:layout_width="172dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="32dp"
         android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView36"
@@ -182,7 +181,7 @@
         android:id="@+id/textView36"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginEnd="49dp"
         android:layout_marginBottom="32dp"
         android:text="TextView"
         android:textSize="24sp"
@@ -195,9 +194,9 @@
         android:id="@+id/textView37"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="351dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="99dp"
         android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView25"
@@ -205,17 +204,4 @@
         app:layout_constraintStart_toEndOf="@+id/textView33"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="101dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="200dp"
-        android:text="Kcal"
-        android:textSize="24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/textView37"
-        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
