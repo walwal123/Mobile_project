@@ -28,6 +28,7 @@ public class Food_Analyze extends AppCompatActivity {
         ArrayList<String> retrievedData = myApp.getMyDataList();
         int total_c = 0;
         int morning=0, lunch=0, dinner=0, drink =0;
+        int index=0;
 
         //한달전 날짜를 구하는 code
         Calendar calendar = Calendar.getInstance();
@@ -60,7 +61,12 @@ public class Food_Analyze extends AppCompatActivity {
                 } else {
 
                 }
-                int position = c2.getPosition();
+                int position2 = c2.getPosition();
+                int position = 0;
+                if (position2 == 0){
+                    index = id;
+                }
+                position = id-index;
                 int dataAtIndex = Integer.parseInt(retrievedData.get(position));
                 System.out.println(dataAtIndex);
                 total_c += dataAtIndex;
